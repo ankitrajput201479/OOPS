@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class employee
+{
+    private: // for declaring private members of class
+    int a,b,c;
+    public: // to declare public members of class 
+    int d,e;
+    void setdata(int a1,int a2,int a3);//function declaration 
+    void getdata(){
+        cout<<"the value of a is "<<a<<endl;
+        cout<<"the value of b is "<<b<<endl;
+        cout<<"the value of c is "<<c<<endl;
+        cout<<"the value of d is "<<d<<endl;
+        cout<<"the value of e is "<<e<<endl;
+    }
+};
+void employee ::setdata( int a1,int a2, int a3){
+    a=a1;
+    b=a2;
+    c=a3;
+}
+int main() {
+    employee ank;// 'ank' is an object
+    ank.d=12;
+    ank.e=34;
+    ank.setdata(23,45,66); //only fucntions present in class can acess the private variables
+    ank.getdata();
+
+   return 0;
+}
