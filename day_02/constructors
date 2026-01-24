@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+class constructor{
+    int a;
+    public:
+    constructor(){//constructor declaration,it is a default constructor
+        a=4;
+    cout<<"the value of a is : "<<a<<endl;
+    }
+};
+int main() {
+    constructor c;//default constructor called automatically when object is created
+
+   return 0;
+}
