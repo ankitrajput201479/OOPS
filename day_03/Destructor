@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+class num{
+    
+    public:
+    num(){
+        
+        cout<<"this time my constructor is called "<<endl;
+    }
+    ~num(){  // destructor declaration
+        
+        cout<<"this time my destrucotr is called"<<endl;
+    }
+};
+int main() {
+    cout<<"first object is made"<<endl;
+    num n1;
+    cout<<"2nd  object created"<<endl;
+    num n2;
+    cout<<"3rd object created"<<endl;
+    num n3;
+    // after calling all the constructors the compiler calls destructors of all objects together
+   return 0;
+}
