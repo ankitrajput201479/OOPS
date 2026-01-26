@@ -1,0 +1,71 @@
+#include <iostream>
+#include<iomanip>
+using namespace std;
+class grandfather{
+    private:
+    int lifespan;
+    void showlife(){
+        cout<<"the life span of granfdfather is: "<<setw(5)<<lifespan<<endl;
+    }
+    protected:
+    int height;
+    public:
+    int wealth;
+    grandfather(){
+        lifespan = 70;
+        height =6;
+        wealth =100000;
+    }
+    void showgrandfather(){
+        showlife();
+        cout<<"the height of grandfather is   : "<<setw(5)<<height<<endl;
+        cout<<"the wealth of grandfather is   : "<<setw(5)<<wealth<<endl;
+    }
+};
+class father : public grandfather{
+    private:
+    int car;
+    public:
+    father(){
+        height=5.8;
+        wealth=200000;
+        car=1;
+    }
+    void showfather(){
+        cout<<"the height of father is      : "<<setw(5)<<height<<endl;
+        cout<<"the wealth of father is      : "<<setw(5)<<wealth<<endl;
+        cout<<"the number of cars father has: "<<setw(5)<<car<<endl;
+    }
+};
+class son : public father{
+    private:
+    int bike;
+    public:
+    son(){
+        height=6;
+        wealth=5000000;
+        bike=1;
+    }
+    void showson(){
+        cout<<"the height of son is       : "<<setw(5)<<height<<endl;
+        cout<<"the wealth of son is       : "<<setw(5)<<wealth<<endl;
+        cout<<"the number of bikes son has: "<<setw(5)<<bike<<endl;
+    }
+};
+int main() {
+    cout<<"multilevel inheritence example"<<endl;
+    cout<<"------------------------------"<<endl;
+    cout<<"     grandfather details       "<<endl;
+    class grandfather g;
+    g.showgrandfather();
+    cout<<"------------------------------"<<endl;
+    cout<<"         father details        "<<endl;
+    class father f;
+    f.showfather();
+    cout<<"------------------------------"<<endl;
+    cout<<"       son details             "<<endl;
+    class son s;
+    s.showson();
+
+   return 0;
+}
