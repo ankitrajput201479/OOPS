@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class employee {
+   public:
+   int id;
+   float salary;
+   employee(int empid){
+      id=empid;
+      salary=300.45;
+   }
+ employee(){}
+};
+/*syntax to inherit a class
+ class {{derived class}} : {{visibility mode}} {{base class name}}*/
+class programers : employee{
+   public:
+   programers(int sid){
+      id=sid;
+   }
+   int languagecode =12;
+  void getdata(){
+      cout<<id<<endl;
+   }
+};
+int main() {
+   employee ankit(1);
+   cout<<ankit.salary<<endl;
+   cout<<ankit.id<<endl;
+   programers rohan(2);
+   cout<<rohan.languagecode<<endl;
+   rohan.getdata();
+   return 0;
+}
+  /* public visibility mode : public members of base class become public members of derived class 
+private visibility mode : public members of base class become private members of derived class (default setting)
+  >>>>private member are never inherited*/
