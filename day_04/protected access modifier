@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+class base{
+    private:
+    int a=2;
+    protected:
+    int b=4;
+    public:
+    int c=5;
+    
+};
+class derived : public base{
+    public:
+    void show(){
+        //cout<<"the value of a is: "<<a; // we cannot access private members of base class in derived class
+        cout<<"the value of b is: "<<b<<endl;
+        cout<<"the value of c is: "<<c<<endl;
+    }
+};
+int main() {
+    derived  der;
+    der.show();
+    // der.b; // we cannot access protected members of base class through derived class object
+    
+   return 0;
+}
