@@ -9,9 +9,9 @@ class maths {
     void printnum(void){
         cout<<"the answer is  "<<a<<"+"<<b<<"i is "<<endl;
     }
-    maths(int x ,int y){  
-        a=x;
-        b=y;
+    maths(int a ,int b){  
+        this->a=a;
+        this->b=b; // this pointer is used to distinguish between class members and parameters
     }
     maths(int x){    //constructor overloading 
         a=0;
