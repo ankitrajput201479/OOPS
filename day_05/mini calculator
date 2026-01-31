@@ -1,0 +1,87 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+class simplecalculator
+{
+private:
+    float a, b;
+
+public:
+    void getinput()
+    {
+        cout << "enter two numbers:";
+        cin >> a >> b;
+    }
+    void add()
+    {
+        cout << "the sum of the numbers is:" << a + b << endl;
+    }
+    void subtract()
+    {
+        cout << "the difference of the numbers is:" << a - b << endl;
+    }
+    void multiply()
+    {
+        cout << "the product of the numbers is:" << a * b << endl;
+    }
+    void divide()
+    {
+        if (b != 0)
+            cout << "the quotient of the numbers is:" << a / b << endl;
+        else
+            cout << "division by zero is not allowed." << endl;
+    }
+};
+class scientificalculator
+{
+private:
+    float x, y;
+
+public:
+    void getinputs()
+    {
+        cout << "enter the two numbers:";
+        cin >> x >> y;
+    }
+    void power()
+    {
+        cout << "the value of x raised to y is :" << pow(x, y) << endl;
+    }
+    void square_root()
+    {
+        cout << "the square root of x is :" << sqrt(x) << endl;
+        cout << "the square root of y is :" << sqrt(y) << endl;
+    }
+    void sinFUNC()
+    {
+        cout << "the sine of x is :" <<sin(x) << endl;
+        cout << "the sine of y is :" <<sin(y) << endl;
+    }
+    void cosFUNC()
+    {
+        cout << "the cosine of x is :" <<cos(x) << endl;
+        cout << "the cosine of y is :" <<cos(y) << endl;
+    }
+};
+class HyrbidCalculator : public simplecalculator,public scientificalculator
+{
+
+};
+int main()
+{
+    HyrbidCalculator calc;
+    cout<<"simple calculator operations:"<<endl;
+    calc.getinput();
+    calc.add();
+    calc.subtract();
+    calc.multiply();
+    calc.divide();
+    cout<<"scientific calculator operations:"<<endl;
+    calc.getinputs();
+    calc.power();   
+    calc.square_root();
+    calc.sinFUNC();
+    calc.cosFUNC();
+
+    return 0;
+}
