@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+// student->exam --------------
+// student->sports             |___________virtual base class=student
+// exam->result                |
+// sports->result--------------
+class student{
+   protected:
+   int roll_no;
+   public:
+   void set_rollno(int r){ 
+    roll_no=r;
+   }
+   void print_rollno(){
+    cout<<"the roll number is :"<<roll_no<<endl;
+   }
+}; 
+class exam:virtual public student{ //virtual inheritance
+    protected:
+    float maths,physics;
+    public:
+    void set_marks(float m1,float m2){
+        maths= m1;
+        physics=m2;
+    }
+    void print_marks(){
+        cout<<"the marks in maths is:"<<maths<<endl;
+        cout<<"the marks in physics is :"<<physics<<endl;
+    }
+};
+class sports:virtual public student{ //virtual inheritance
+    protected:
+    int score;
+    public:
+    void set_score(int sc){
+        score=sc;
+    }
+    void print_score(){
+        cout<<"the score is :"<<score<<endl;
+    }
+};
+class result:public exam,public sports{
+    private:
+    float total;
+    public:
+    void display(){
+        total=maths+physics+score;
+        print_rollno();
+        print_marks();
+        print_score();
+        cout<<"the total marks is :"<<total<<endl;
+    }
+};
+int main() {
+    result dev;
+    dev.set_rollno(23);
+    dev.set_marks(95.5,89.5);
+    dev.set_score(45);
+    dev.display();
+//virtual inheritance solves the ambiguity problem in multiple inheritance
+   return 0;
+}
