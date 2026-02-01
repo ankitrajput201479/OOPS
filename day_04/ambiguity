@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+class base1
+{
+public:
+    void greet()
+    {
+        cout << "hello from base1" << endl;
+    }
+};
+class base2
+{
+public:
+    void greet()
+    {
+        cout << "hello from base2" << endl;
+    }
+};
+class derived : public base1, public base2
+{
+public:
+    void greet()
+    {
+        base1::greet(); // resolving ambiguity by specifying which greet() to call
+    }
+};
+int main()
+{
+    base1 b1;
+    base2 b2;
+    b1.greet(); // calls greet() of base1
+    b2.greet(); // calls greet() of base2
+    derived d;
+    d.greet(); // calls greet() of derived class which calls both base1 and base2 greet() methods
+
+    return 0;
+}
