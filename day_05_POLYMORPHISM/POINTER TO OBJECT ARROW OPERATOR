@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+ class complex{
+    int imaginary;
+    int real;
+    public:
+    void setdata(int a, int b){
+        real=a;
+        imaginary=b;
+    }
+    void getdata(){
+        cout<<"the real part is :"<<real<<endl;
+        cout<<"the imaginary part is :"<<imaginary<<endl;
+    }
+ };
+int main() {
+    complex c1;
+    complex *ptr=&c1; // pointer poiting towards object c1
+    (*ptr).setdata(3,4);//it is as sameas c1.setdata(3,4);
+    ptr->getdata(); // it is as same as c1.getdata();
+    
+
+   return 0;
+}
